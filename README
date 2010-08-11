@@ -1,0 +1,16 @@
+pydaq - Python control of the National Instruments 6008 USB DAQ
+-----
+
+Let's face it using the NI C API and programming on Windows are not the most inspiring tasks. Here is a python class that makes using this a little more manageable.
+
+pydaq can access the the current and voltage values on any of the analogue ports. 
+
+1) Import the code
+2) Instantiate the class. Here you the sting you specify sets what DAQ you want to access (in this case the it's Dev1) and what ports you would like to monitor (in this case analogue input ports 0 through to 2).
+3) Returns a Python (indexed by port number) of voltages
+3) Returns a Python of currents
+
+import DAQ
+daq = DAQ("Dev1/ai0:2")
+volts = daq.voltage()
+amps  = daq.current()
